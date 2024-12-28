@@ -34,7 +34,7 @@ const active = ref(false)
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 5%;
+  width: 100%;
   gap: 20px;
   .sidebar-item {
     display: flex;
@@ -44,8 +44,9 @@ const active = ref(false)
     font-size: 22px;
     height: 50px;
     gap: 5px;
+    padding: 0 2px;
     span {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 500;
     }
   }

@@ -1,0 +1,10 @@
+{
+  "off_date": {
+    "request_off": " Take off ",
+    "cancelOff": " Cancel take off ",
+    "confirm_request_off": "Confirm take off",
+    "want_to_take_the_day_off": "Are you sure you want to take off on ",
+    "confirm_cancellation_of_leave_request": "Confirm cancel take off",
+    "want_to_cancel_take_the_day_off": "Are you sure you want to cancel take off on "
+  }
+}

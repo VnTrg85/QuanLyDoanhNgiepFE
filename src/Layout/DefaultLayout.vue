@@ -24,5 +24,14 @@ import Sidebar from '../components/Sidebar.vue'
   width: 100vw;
   display: flex;
   flex-direction: column;
+  .container-bottom {
+    display: flex;
+    .container-bottom-left {
+      width: 75px;
+    }
+    .container-bottom-right {
+      width: 100%;
+    }
+  }
 }
 </style>

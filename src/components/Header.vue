@@ -7,9 +7,15 @@
     </div>
     <div class="header-right">
       <FontAwesomeIcon :icon="faBell"></FontAwesomeIcon>
-      <img
-        src="https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg"
-      />
+      <div class="profile" @click="handlePopup">
+        <img
+          src="https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg"
+        />
+        <div v-if="isOpenPopup" class="profile-popup">
+          <h4>Profile</h4>
+          <h4 @click="handleSignout">Sign out</h4>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +23,18 @@
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBars, faUsers, faBell } from '@fortawesome/free-solid-svg-icons'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const isOpenPopup = ref(false)
+const handlePopup = () => {
+  isOpenPopup.value = !isOpenPopup.value
+}
+
+const handleSignout = () => {
+  localStorage.removeItem('auth')
+  router.push('/auth')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +65,33 @@ import { faBars, faUsers, faBell } from '@fortawesome/free-solid-svg-icons'
       width: 30px;
       height: 30px;
       border-radius: 50%;
+    }
+    .profile {
+      position: relative;
+      cursor: pointer;
+
+      .profile-popup {
+        background: white;
+        // border: 1px solid #ccc;
+        z-index: 100;
+        color: black;
+        position: absolute;
+        width: 150px;
+        top: 35px;
+        right: 0px;
+        border-radius: 5px;
+        h4 {
+          margin: 0px;
+          font-size: 15px;
+          border-bottom: 1px solid #ccc;
+          cursor: pointer;
+          padding: 10px;
+          font-weight: 500;
+        }
+        h4:hover {
+          background: var(--primary-color);
+        }
+      }
     }
   }
 }

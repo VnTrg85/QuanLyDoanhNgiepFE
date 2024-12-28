@@ -1,8 +1,12 @@
 :root {
   --primary-color: #01693b;
   --secondary-color: #344d6e;
+  --modal-color: #7f7f7f;
 }
 body {
   margin: 0;
   box-sizing: border-box;
+}
+.separate-item {
+  border-left: 2px solid #ece9e9;
 }

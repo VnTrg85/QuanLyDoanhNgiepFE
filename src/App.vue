@@ -2,8 +2,5 @@
   <RouterView></RouterView>
 </template>
 
-<script setup>
-import Sidebar from './components/Sidebar.vue'
-import Header from './components/Header.vue'
-</script>
+<script setup></script>
 <style scoped></style>
